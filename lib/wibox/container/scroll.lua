@@ -246,7 +246,7 @@ function scroll:continue()
 end
 
 --- Reset the scrolling state to its initial condition.
--- For must scroll step functions, the effect of this function should be to
+-- For most scroll step functions, the effect of this function should be to
 -- display the widget without any scrolling applied.
 -- This function does not undo the effect of @{pause}.
 -- @method reset_scrolling
