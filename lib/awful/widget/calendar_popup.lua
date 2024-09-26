@@ -265,7 +265,7 @@ function calendar_popup:attach(widget, position, args)
     args = args or {}
     if args.on_hover == nil then args.on_hover=true end
 
-    widget.buttons = {
+    widget.buttons = gears.table.join(widget.buttons,
         abutton({ }, 1, function ()
                               if not self.visible or self._calendar_clicked_on then
                                   self:call_calendar(0, position)
@@ -275,7 +275,7 @@ function calendar_popup:attach(widget, position, args)
                         end),
         abutton({ }, 4, function () self:call_calendar(-1) end),
         abutton({ }, 5, function () self:call_calendar( 1) end)
-    }
+    )
 
     if args.on_hover then
         widget:connect_signal("mouse::enter", function ()
