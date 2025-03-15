@@ -14,6 +14,9 @@ local xml_entity_names = { ["'"] = "&apos;", ["\""] = "&quot;", ["<"] = "&lt;", 
 -- @treturn string Escaped text.
 -- @staticfct gears.string.xml_escape
 function gstring.xml_escape(text)
+    if type(text) == "number" then
+        text = tostring(text)
+    end
     return text and text:gsub("['&<>\"]", xml_entity_names) or nil
 end
 
